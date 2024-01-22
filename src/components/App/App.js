@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Search from '../Search/searchbar';
+import News from '../News/news';
 
 const App = () => {
     return (
@@ -16,6 +17,9 @@ const App = () => {
               <button className='official'>Official website</button>
             </div>
         </nav>
+        <header>
+            <News />
+        </header>
         </>
     )
 }

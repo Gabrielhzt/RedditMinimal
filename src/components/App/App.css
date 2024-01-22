@@ -11,6 +11,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 40px 30px;
+    margin-bottom: 50px;
 }
 
 .logo {
@@ -52,4 +53,10 @@ nav {
     border: none;
     border-radius: 20px;
     cursor: pointer;
+}
+
+/* Header */
+
+header {
+    margin: 20px 30px;
 }
