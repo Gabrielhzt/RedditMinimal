@@ -3,6 +3,7 @@ import './App.css';
 import Search from '../Search/searchbar';
 import News from '../News/news';
 import Post from '../Post/post';
+import Comunity from '../User/comunity';
 
 const App = () => {
     return (
@@ -22,7 +23,12 @@ const App = () => {
             <News />
         </header>
         <main>
-            <Post />
+            <div className='Post'>
+              <Post />
+            </div>
+            <div className='comunity-all'>
+              <Comunity  />
+            </div>
         </main>
         </>
     )

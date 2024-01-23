@@ -58,5 +58,31 @@ nav {
 /* Header */
 
 header {
-    margin: 20px 30px;
+    margin: 20px 30px 50px;
 }
+
+/* Main */
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    'post post comunity';
+    gap: 40px;
+    margin: 30px 30px;
+}
+
+.Post {
+    grid-area: post;
+    overflow-y: auto;
+    max-height: 680px;
+}
+
+.Post::-webkit-scrollbar {
+    width: 0.1rem;
+}
+
+.comunity-all {
+    grid-area: comunity;
+}
+

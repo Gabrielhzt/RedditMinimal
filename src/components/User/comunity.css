@@ -1,0 +1,44 @@
+.comunity {
+    background-color: rgb(1, 46, 79);
+    color: #fffffff3;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 350px;
+}
+
+.space {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comunity h3 {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.all-comunity {
+    display: flex;
+    gap: 10px;
+}
+
+.img img {
+    width: 38px;
+    height: 38px;
+    border-radius: 30px;
+}
+
+.info-comunity {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-comunity h4 {
+    font-size: 14px;
+}
+
+.info-comunity p {
+    font-size: 12px;
+}
+
