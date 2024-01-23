@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Search from '../Search/searchbar';
 import News from '../News/news';
+import Post from '../Post/post';
 
 const App = () => {
     return (
@@ -20,6 +21,9 @@ const App = () => {
         <header>
             <News />
         </header>
+        <main>
+            <Post />
+        </main>
         </>
     )
 }
