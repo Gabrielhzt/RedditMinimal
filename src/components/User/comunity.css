@@ -1,3 +1,7 @@
+.all-comunity {
+    margin-left: 10px;
+}
+
 .comunity {
     background-color: rgb(1, 46, 79);
     color: #fffffff3;
@@ -42,3 +46,19 @@
     font-size: 12px;
 }
 
+.more-btn {
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    display: flex;
+    padding: 5px;
+    width: 74px;
+    cursor: pointer;
+}
+
+.more-btn:hover {
+    background-color: rgba(4, 110, 186, 0.55);
+    border-radius: 20px;
+    padding: 5px;
+}

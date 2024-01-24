@@ -6,6 +6,7 @@ import Post from '../Post/post';
 import Comunity from '../User/comunity';
 
 const App = () => {
+
     return (
         <>
         <nav>

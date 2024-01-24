@@ -12,6 +12,10 @@ nav {
     justify-content: space-between;
     padding: 40px 30px;
     margin-bottom: 50px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    background-color: #fff;
 }
 
 .logo {
@@ -58,7 +62,7 @@ nav {
 /* Header */
 
 header {
-    margin: 20px 30px 50px;
+    padding: 150px 30px 20px;
 }
 
 /* Main */
@@ -69,13 +73,11 @@ main {
     grid-template-areas: 
     'post post comunity';
     gap: 40px;
-    margin: 30px 30px;
+    margin: 30px 20px;
 }
 
 .Post {
     grid-area: post;
-    overflow-y: auto;
-    max-height: 680px;
 }
 
 .Post::-webkit-scrollbar {

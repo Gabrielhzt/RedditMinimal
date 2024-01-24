@@ -118,3 +118,47 @@
     color: rgba(246, 77, 77, 0.963);
 }
 
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: transparent;
+    border: none;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.filter-btn:hover {
+    background-color: rgba(4, 110, 186, 0.55);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.filter {
+    display: block;
+    position: absolute;
+    background-color: #046eba;
+    border-radius: 5px;
+    padding: 10px 7px 3px;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.filter h4 {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.filter h5 {
+    font-size: 13px;
+    margin-bottom: 2px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.filter h5:hover {
+    background-color: rgba(255, 255, 255, 0.138);
+}

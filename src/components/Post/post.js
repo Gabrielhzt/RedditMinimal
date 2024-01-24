@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './post.css'
 import postdata from '../Data/postdata';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisH, faUpLong, faDownLong, faMessage, faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisH, faUpLong, faDownLong, faMessage, faArrowUpFromBracket, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Post = () => {
+    const [filter, setFilter] = useState(false)
+    
+    const handleFilterClick = () => {
+      setFilter(!filter); // Inversez la valeur actuelle de filter
+    };
+
     return (
         <div>
-           {postdata.map((props) => (
+          <div>
+            <button className='filter-btn' onClick={handleFilterClick}>
+              Top
+              <FontAwesomeIcon icon={faChevronDown} size='sm' />
+            </button>
+            {filter && 
+            <div className='filter'>
+              <h4>Sort by</h4>
+              <h5>New</h5>
+              <h5>Best</h5>
+            </div>
+            }
+          </div>
+           {postdata.slice(0, 5).map((props) => (
               <div className='all-post'>
                 <div className='post'>
                     <div>
