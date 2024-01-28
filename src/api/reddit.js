@@ -1,6 +1,6 @@
 export const API_ROOT = 'https://www.reddit.com';
 
-const fetchData = async (url) => {
+export const fetchData = async (url) => {
   try {
     const response = await fetch(url);
     const json = await response.json();

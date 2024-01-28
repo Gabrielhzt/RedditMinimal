@@ -8,6 +8,7 @@ const Post = () => {
   const [filter, setFilter] = useState(false);
   const [posts, setPosts] = useState([]);
   const [take, setTake] = useState('Top');
+  const [loading, setLoading] = useState(true);
 
   const handleFilterClick = () => {
     setFilter(!filter);
@@ -31,6 +32,7 @@ const Post = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true)
         let url;
         
         switch (take) {
@@ -51,11 +53,45 @@ const Post = () => {
         setPosts(subredditPosts.slice(0, 5));
       } catch (error) {
         console.error('Error fetching subreddit posts:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
   }, [take]);
+
+  const postLoading = () => {
+    const numpost = 6;
+  
+    const postload = (index) => (
+      <div className='all-post-load' key={index}>
+        <div className='flex'>
+          <div className='flex-user'>
+            <div className='user-img-post-load'></div>
+            <div className='user-post-load'></div>
+          </div>
+          <div className='opt'>
+            <div className='button-load'></div>
+            <FontAwesomeIcon icon={faEllipsisH} />
+          </div>
+        </div>
+        <div className='title-post-load'></div>
+        <div className='text-post-load'></div>
+        <div className='text-post-load'></div>
+        <div className='text-post-load-2'></div>
+      </div>
+    );
+  
+    const posts = [];
+    for (let i = 0; i < numpost; i++) {
+      posts.push(postload(i));
+    }
+  
+    return posts;
+  };
+
+
   return (
     <div>
       <div>
@@ -72,7 +108,10 @@ const Post = () => {
           </div>
         }
       </div>
-      {posts.map((post) => (
+      {loading ? (
+        <>{postLoading()}</>
+      ) : (
+      posts.map((post) => (
         <div key={post.id} className='all-post'>
           <div className='post'>
             <div>
@@ -89,7 +128,7 @@ const Post = () => {
               <div className='content'>
                 <div>
                   <h3 className='title-post'>{post.title}</h3>
-                  <p className='text-post'>{post.selftext.slice(0, 250)}</p>
+                  <p className='text-post'>{post.selftext.slice(0, 180)}</p>
                 </div>
                 {post.preview && post.preview.images && post.preview.images[0] && post.preview.images[0].source && (
                   post.post_hint === 'image' ? (
@@ -127,7 +166,8 @@ const Post = () => {
             </div>
           </div>
         </div>
-      ))}
+      ))
+    )}
     </div>
   );
 };

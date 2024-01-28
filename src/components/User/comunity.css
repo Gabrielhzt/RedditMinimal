@@ -62,3 +62,42 @@
     border-radius: 20px;
     padding: 5px;
 }
+
+.all-com-load {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.all-com-load-2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.com-load-img {
+    background-color: rgba(147, 209, 254, 0.15);
+    width: 38px;
+    height: 38px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.flex-com {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.name-com-load {
+    background-color: rgba(147, 209, 254, 0.15);
+    width: 80px;
+    height: 12px;
+}
+
+.num-com-load {
+    background-color: rgba(147, 209, 254, 0.15);
+    width: 60px;
+    height: 8px;
+    margin-bottom: 20px;
+}
