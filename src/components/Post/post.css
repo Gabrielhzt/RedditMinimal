@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 4px 10px 10px;
-    height: 180px;
+    height: 2é0px;
 }
 
 .post:hover {
@@ -83,6 +83,10 @@
     color: #fff;
 }
 
+.btn-2 {
+    font-size: 13px;
+}
+
 .btn {
     display: flex;
     align-items: center;
@@ -93,6 +97,7 @@
     padding: 8px 16px;
     color: #fff;
     cursor: pointer;
+    font-size: 13px;
 }
 
 .btn:hover {
@@ -161,6 +166,21 @@
 
 .filter h5:hover {
     background-color: rgba(255, 255, 255, 0.138);
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.content img, video {
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 70px;
+    max-height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 @media (max-width: 600px) {

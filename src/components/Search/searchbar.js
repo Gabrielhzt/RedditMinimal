@@ -3,14 +3,30 @@ import './searchbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SearchResult from '../SearchResult/searchresult';
+import { getSearchResults2 } from '../../api/reddit';
 
 const Search = () => {
   const [inputValue, setInputValue] = useState('');
-  const [showResults, setShowResults] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
 
+  const handleInputChange = async (e) => {
+    const query = e.target.value;
+    setInputValue(query);
+
+    try {
+      if (query.trim() !== '') {
+        const results = await getSearchResults2(query);
+        setSearchResults(results);
+      } else {
+        setSearchResults([]);
+      }
+    } catch (error) {
+      console.error('Error fetching search results:', error);
+    }
+  };
 
   return (
-    <div className={`center All-search ${showResults ? 'active' : ''}`}>
+    <div className={`center All-search ${searchResults.length > 0 ? 'active' : ''}`}>
       <div className='Searchbar'>
         <FontAwesomeIcon icon={faSearch} style={{ color: '#fff' }} />
         <input
@@ -18,15 +34,14 @@ const Search = () => {
           type='text'
           placeholder='Search on Reddit'
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          onFocus={() => setShowResults(true)}
-          onBlur={() => setShowResults(false)}
+          onChange={handleInputChange}
+          onFocus={() => setSearchResults([])}
         />
       </div>
 
-      {showResults && 
+      {searchResults.length > 0 && 
         <div className='search-results-container'>
-          <SearchResult />
+          <SearchResult results={searchResults} />
         </div>
       }
     </div>
