@@ -46,41 +46,10 @@ export const getAllSubreddits = async () => {
   return fetchData(`${API_ROOT}/subreddits.json`);
 };
 
-// Appels de fonctions
-async function fetchDataBest() {
-    const bestData = await getBestSubredditPosts();
-    console.log('Best Data:', bestData);
-}
-
-async function fetchDataPopular() {
-    const popularData = await getPopularSubreddits();
-    console.log('Popular Data:', popularData);
-}
-
-async function fetchDataRising() {
-    const risingData = await getRisingSubredditPosts();
-    console.log('Rising Data:', risingData);
-}
-
-async function fetchDataTop() {
-    const TopData = await getTopSubredditPosts();
-    console.log('Top Data:', TopData);
-}
-
-async function fetchDataPost() {
-    const PostData = await getSubredditPosts();
-    console.log('Post Data:', PostData);
-}
-
-
-async function fetchDataSearchResults() {
-    const searchResults = await getSearchResults2('cats');
-}
-
 export const getCommentsForPost = async (postId) => {
   try {
       const response = await axios.get(`https://www.reddit.com/comments/${postId}.json`);
-      const commentsData = response.data[1].data.children;
+      
 
       return response.data[1].data.children;
   } catch (error) {
@@ -91,7 +60,6 @@ export const getCommentsForPost = async (postId) => {
 export const getPostDetails = async (postId) => {
   try {
     const response = await axios.get(`${API_ROOT}/comments/${postId}.json`);
-    // Extract and return post details from the response
     return response.data[0].data.children[0].data;
   } catch (error) {
     throw error;
