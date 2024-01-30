@@ -64,7 +64,7 @@ const Comments = () => {
                         <p>{postDetails.selftext}</p>
                         {postDetails.url && 
                             <div className='post-img'>
-                                <img src={postDetails.url} alt="Post Image" />
+                                <img src={postDetails.url} alt="" />
                             </div>
                         }
                         <div className='all-btn-2'>
