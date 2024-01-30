@@ -99,8 +99,14 @@ nav {
         width: 100%;
         justify-content: center;
         background-color: #046eba;
-        padding: 20px 0  20px;
+        padding: 20px  20px;
         border-radius: 0 0 20px 20px;
+    }
+
+    .menu-link a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
     }
 }
 

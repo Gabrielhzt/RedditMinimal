@@ -23,8 +23,12 @@ const Navbar = () => {
               <Search />
             </div>
             <div className='link'>
-              <button className='app'>Official App</button>
-              <button className='official'>Official website</button>
+            <a href='https://reddit.com' target='_blank' rel='noopener noreferrer'>
+              <button className='app' >Official App</button>
+            </a>
+            <a href='https://reddit.com' target='_blank' rel='noopener noreferrer'>
+            <button className='official'>Official website</button>
+            </a>
             </div>
             <div className='icon'>
               <FontAwesomeIcon icon={faBars} size='xl' onClick={handleMenu} />
@@ -32,8 +36,12 @@ const Navbar = () => {
           </nav>
           {menu && 
           <div className='menu-link'>
-            <button className='app'>Official App</button>
+            <a href='https://reddit.com' target='_blank' rel='noopener noreferrer'>
             <button className='official'>Official website</button>
+            </a>
+            <a href='https://reddit.com' target='_blank' rel='noopener noreferrer'>
+              <button className='app'>Official App</button>
+            </a>
           </div>
           }
           <div className='Search-2'>
