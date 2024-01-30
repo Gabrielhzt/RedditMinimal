@@ -1,4 +1,3 @@
-import react from 'react';
 import News from '../News/news';
 import Post from '../Post/post';
 import Comunity from '../User/comunity';

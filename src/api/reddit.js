@@ -75,14 +75,12 @@ async function fetchDataPost() {
 
 async function fetchDataSearchResults() {
     const searchResults = await getSearchResults2('cats');
-    console.log('Search Results:', searchResults);
 }
 
 export const getCommentsForPost = async (postId) => {
   try {
       const response = await axios.get(`https://www.reddit.com/comments/${postId}.json`);
       const commentsData = response.data[1].data.children;
-      console.log('Comments Data:', commentsData);
 
       return response.data[1].data.children;
   } catch (error) {
@@ -101,12 +99,3 @@ export const getPostDetails = async (postId) => {
 };
 
 
-fetchDataSearchResults();
-  
-
-
-fetchDataBest();
-fetchDataRising();
-fetchDataPopular();
-fetchDataTop();
-fetchDataPost();

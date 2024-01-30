@@ -1,13 +1,15 @@
+// comunity.js
 import React, { useState, useEffect } from 'react';
 import './comunity.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPopularSubreddits } from '../../api/reddit';
-import { setLoading, setSubreddits } from '../../store/redditSlice';
+import { getPopularSubreddits } from '../../store/redditSlice';
+import { selectSubreddits, selectLoading, selectError } from '../../store/redditSlice';
 
 const Comunity = () => {
   const dispatch = useDispatch();
-  const subreddits = useSelector((state) => state.reddit.subreddits);
-  const loading = useSelector((state) => state.reddit.loading);
+  const subreddits = useSelector(selectSubreddits);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
   const [more, setMore] = useState(6);
   const [show, setShow] = useState('See more');
 
@@ -22,19 +24,7 @@ const Comunity = () => {
   };
 
   useEffect(() => {
-    const fetchSubreddits = async () => {
-      try {
-        dispatch(setLoading(true));
-        const subredditList = await getPopularSubreddits();
-        dispatch(setSubreddits(subredditList.slice()));
-      } catch (error) {
-        console.error('Error fetching subreddits:', error);
-      } finally {
-        dispatch(setLoading(false));
-      }
-    };
-
-    fetchSubreddits();
+    dispatch(getPopularSubreddits());
   }, [dispatch]);
 
   const comunityLoad = () => {
@@ -43,13 +33,13 @@ const Comunity = () => {
     const comunitiesLoad = (index) => (
       <div key={index}>
         <div className='all-com-load'>
-            <div className='all-com-load-2'>
-              <div className='com-load-img'></div>
-              <div className='flex-com'>
-                <div className='name-com-load'></div>
-                <div className='num-com-load'></div>
-              </div>
+          <div className='all-com-load-2'>
+            <div className='com-load-img'></div>
+            <div className='flex-com'>
+              <div className='name-com-load'></div>
+              <div className='num-com-load'></div>
             </div>
+          </div>
         </div>
       </div>
     );
@@ -58,15 +48,17 @@ const Comunity = () => {
     for (let i = 0; i < numberComunitiesLoad; i++) {
       comunities.push(comunitiesLoad(i));
     }
-  
+
     return comunities;
-  }
+  };
 
   return (
     <div className='comunity'>
       <h3>POPULAR COMMUNITIES</h3>
       {loading ? (
         <>{comunityLoad()}</>
+      ) : error ? (
+        <p>Error: {error}</p>
       ) : (
         <div className='space'>
           {subreddits

@@ -61,6 +61,11 @@
     border-radius: 5px 
 }
 
+.style-2 {
+    text-decoration: none;
+    color: #fff;
+}
+
 @media (max-width: 600px) {
 
     .all-result {

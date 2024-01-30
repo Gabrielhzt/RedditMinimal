@@ -114,8 +114,8 @@ const Post = () => {
       ) : (
       posts.map((post) => (
         <div key={post.id} className='all-post'>
-          <Link to={`/comments/${post.id}`} className='style'>
           <div className='post'>
+          <Link to={`/comments/${post.id}`} className='style'>
             <div>
               <div className='user-join'>
                 <div className='user'>
@@ -142,6 +142,7 @@ const Post = () => {
                 )}
               </div>
             </div>
+            </Link>
             <div className='all-btn'>
               <div className='btn-2'>
                 <button className='vote-btn'><FontAwesomeIcon className='high' icon={faUpLong} size="lg" /></button>
@@ -166,7 +167,6 @@ const Post = () => {
               </button>
             </div>
           </div>
-          </Link>
         </div>
       ))
     )}

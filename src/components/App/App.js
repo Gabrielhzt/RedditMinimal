@@ -1,28 +1,22 @@
-import React, { useState } from 'react';
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from '../Navbar/navbar';
 import Home from '../home/home';
 import Comments from '../comment/comment';
 
-const router = createBrowserRouter( 
-  createRoutesFromElements(
-    <Route>
-      <Route path='/' element={ <Home /> } />
-      <Route path='/comments/:postId' element={<Comments />} />
-    </Route>
-  )
-);
-
-
 const App = () => {
-
-    return (
-        <>
-        <Navbar />
-        <RouterProvider router={router} />
-        </>
-    )
-}
+  return (
+    <Router>
+      <>
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/comments/:postId" element={<Comments />} />
+        </Routes>
+      </>
+    </Router>
+  );
+};
 
 export default App;
