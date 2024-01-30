@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './post.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH, faUpLong, faDownLong, faMessage, faArrowUpFromBracket, faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -113,12 +114,12 @@ const Post = () => {
       ) : (
       posts.map((post) => (
         <div key={post.id} className='all-post'>
+          <Link to={`/comments/${post.id}`} className='style'>
           <div className='post'>
             <div>
               <div className='user-join'>
                 <div className='user'>
                   <h4>{post.subreddit_name_prefixed}</h4>
-                  <ul><li>{post.created_utc} ago</li></ul>
                 </div>
                 <div className='link'>
                   <button className='join-btn'>Join</button>
@@ -165,6 +166,7 @@ const Post = () => {
               </button>
             </div>
           </div>
+          </Link>
         </div>
       ))
     )}
@@ -173,5 +175,4 @@ const Post = () => {
 };
 
 export default Post;
-
 

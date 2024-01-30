@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const API_ROOT = 'https://www.reddit.com';
 
 export const fetchData = async (url) => {
@@ -75,7 +77,29 @@ async function fetchDataSearchResults() {
     const searchResults = await getSearchResults2('cats');
     console.log('Search Results:', searchResults);
 }
-  
+
+export const getCommentsForPost = async (postId) => {
+  try {
+      const response = await axios.get(`https://www.reddit.com/comments/${postId}.json`);
+      const commentsData = response.data[1].data.children;
+      console.log('Comments Data:', commentsData);
+
+      return response.data[1].data.children;
+  } catch (error) {
+      throw error;
+  }
+};
+
+export const getPostDetails = async (postId) => {
+  try {
+    const response = await axios.get(`${API_ROOT}/comments/${postId}.json`);
+    // Extract and return post details from the response
+    return response.data[0].data.children[0].data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 
 fetchDataSearchResults();
   

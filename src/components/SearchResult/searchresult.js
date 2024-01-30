@@ -9,7 +9,7 @@ const SearchResult = ({ results }) => {
       <div className='result'>
         <div className='trend'>
           <FontAwesomeIcon icon={faArrowTrendUp} />
-          <h4>Trends of the day</h4>
+          <h4>Top research</h4>
         </div>
         {results
           .slice(0, 6)
