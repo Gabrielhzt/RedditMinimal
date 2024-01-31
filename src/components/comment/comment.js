@@ -45,8 +45,36 @@ const Comments = () => {
     }, [postId]);
 
     const AllLoad = () => {
-        return <h1>Loading...</h1>
+        return (
+            <div className='grid-com'>
+                <div className='all-com'>
+                    <div className='info-com'>
+                        <div className='user-image-com'></div>
+                        <div className='user-info-com'>
+                            <div className='reddit-com'></div>
+                            <div className='username-com'></div>
+                        </div>
+                    </div>
+                    <div className='content-com'></div>
+                    <div className='content-com-2'></div>
+                    <div className='text-com'></div>
+                    <div className='text-com'></div>
+                    <div className='text-com'></div>
+                    <div className='text-com'></div>
+                    <div className='text-com-2'></div>
+                    <div className='all-btn-com-2'>
+                        <div className='btn-com'></div>
+                        <div className='btn-com'></div>
+                        <div className='btn-com'></div>
+                    </div>
+                </div>
+                <div className='square-com'>
+                
+                </div>
+            </div>
+        )
     }
+        
 
     return (
         <div className='comments-container'>

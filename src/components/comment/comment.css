@@ -112,6 +112,106 @@
     margin-bottom: 2px;
 }
 
+/* Loading page */
+
+.grid-com {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    'one one two';
+    margin-right: 40px;
+}
+
+.all-com {
+    margin: 0 40px;
+    grid-area: one;
+}
+
+.info-com {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.user-image-com {
+    background-color: rgba(4, 110, 186, 0.15);
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.user-info-com {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.reddit-com {
+    background-color: rgba(4, 110, 186, 0.15);
+    width: 80px;
+    height: 10px;
+}
+
+.username-com {
+    background-color: rgba(4, 110, 186, 0.15);
+    width: 50px;
+    height: 8px;
+}
+
+.content-com {
+    background-color: rgba(4, 110, 186, 0.15);
+    max-width: 500px;
+    height: 18px;
+    margin-bottom: 5px;
+}
+
+.content-com-2 {
+    background-color: rgba(4, 110, 186, 0.15);
+    max-width: 300px;
+    height: 18px;
+    margin-bottom: 20px;
+}
+
+.text-com {
+    background-color: rgba(4, 110, 186, 0.15);
+    max-width: 450px;
+    height: 10px;
+    margin-bottom: 5px;
+}
+
+.text-com-2  {
+    background-color: rgba(4, 110, 186, 0.15);
+    max-width: 350px;
+    height: 10px;
+    margin-bottom: 5px;
+}
+
+.all-btn-com-2 {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.btn-com {
+    background-color: rgba(4, 110, 186, 0.15);
+    width: 80px;
+    height: 35px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+}
+
+.square-com {
+    grid-area: two;
+    background-color: rgb(1, 46, 79);
+    width: 410px;
+    height: 400px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+
 @media (max-width: 1000px) {
 
     .comments-container {
@@ -164,5 +264,17 @@
 
     .all-comment p {
         font-size: 12px;
+    }
+
+    .content-com-2 {
+        max-width: 150px;
+    }
+
+    .text-com-2  {
+        max-width: 200px;
+    }
+
+    .square-com  {
+        display: none;
     }
 }
