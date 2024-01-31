@@ -153,6 +153,7 @@ const Post = () => {
                 </p>
                 <button className='vote-btn-2'><FontAwesomeIcon icon={faDownLong} size="lg" /></button>
               </div>
+              <Link to={`/comments/${post.id}`} className='style'>
               <button className='btn'>
                 <FontAwesomeIcon icon={faMessage} size="lg" />
                 <p>
@@ -161,6 +162,7 @@ const Post = () => {
                 : `${post.num_comments}`}
                 </p>
               </button>
+              </Link>
               <button className='btn'>
                 <FontAwesomeIcon icon={faArrowUpFromBracket} size="lg" />
                 <p>Share</p>
